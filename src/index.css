@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ios-background: #F2F2F7;
+}
+
+@layer base {
+  html {
+    font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-[#F2F2F7] text-[#3A3A3C];
+  }
+}
+
+@layer components {
+  .ios-card {
+    @apply bg-white/80 backdrop-blur-ios rounded-2xl shadow-ios border border-white/20;
+  }
+
+  .ios-button {
+    @apply px-6 py-3 rounded-full bg-ios-primary text-white font-semibold 
+           active:scale-95 transition-all duration-200 
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .ios-button-secondary {
+    @apply px-6 py-3 rounded-full bg-ios-gray-100 text-ios-primary font-semibold 
+           active:scale-95 transition-all duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .ios-input {
+    @apply w-full px-4 py-3 rounded-xl bg-ios-gray-100 border-2 border-transparent
+           focus:border-ios-primary focus:outline-none transition-colors;
+  }
+
+  .ios-section {
+    @apply py-8 px-4 sm:px-6 lg:px-8;
+  }
+
+  .ios-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .ios-heading {
+    @apply text-2xl font-bold text-ios-gray-900 mb-4;
+  }
+
+  .ios-text {
+    @apply text-ios-gray-700;
+  }
+}
+
+.canvas-container {
+  @apply fixed inset-0 -z-10;
+}
+
+.content-container {
+  @apply relative z-10;
+}
+
+/* iOS-style animations */
+@keyframes ios-scale {
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.ios-animate-in {
+  animation: ios-scale 0.3s ease-out forwards;
+}
