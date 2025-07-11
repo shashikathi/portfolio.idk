@@ -126,5 +126,3 @@ const Hero: React.FC<HeroProps> = ({ onSectionChange }) => {
 };
 
 export default Hero;
-  )
-}
