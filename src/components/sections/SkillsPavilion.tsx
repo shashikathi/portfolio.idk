@@ -20,7 +20,7 @@ const SkillsPavilion: React.FC<SkillsPavilionProps> = ({ id, onVisible }) => {
   const skillCategories = [
     {
       name: "Languages",
-      icon: <Code size={24} className="text-primary-600" />,
+      icon: <Code size={28} className="text-blue-300" />,
       skills: [
         { name: "Python", level: 90 },
         { name: "SQL", level: 85 },
@@ -29,7 +29,7 @@ const SkillsPavilion: React.FC<SkillsPavilionProps> = ({ id, onVisible }) => {
     },
     {
       name: "Technologies & Frameworks",
-      icon: <BrainCircuit size={24} className="text-primary-600" />,
+      icon: <BrainCircuit size={28} className="text-purple-300" />,
       skills: [
         { name: "PyTorch", level: 85 },
         { name: "CrewAI", level: 80 },
@@ -40,7 +40,7 @@ const SkillsPavilion: React.FC<SkillsPavilionProps> = ({ id, onVisible }) => {
     },
     {
       name: "Tools & Platforms",
-      icon: <Database size={24} className="text-primary-600" />,
+      icon: <Database size={28} className="text-green-300" />,
       skills: [
         { name: "MySQL", level: 85 },
         { name: "OpenAI", level: 85 },
@@ -52,7 +52,7 @@ const SkillsPavilion: React.FC<SkillsPavilionProps> = ({ id, onVisible }) => {
     },
     {
       name: "Data Analysis",
-      icon: <LineChart size={24} className="text-primary-600" />,
+      icon: <LineChart size={28} className="text-yellow-300" />,
       skills: [
         { name: "MS Excel", level: 90 },
         { name: "Data Visualization", level: 85 },
@@ -62,7 +62,7 @@ const SkillsPavilion: React.FC<SkillsPavilionProps> = ({ id, onVisible }) => {
     },
     {
       name: "Soft Skills",
-      icon: <Lightbulb size={24} className="text-primary-600" />,
+      icon: <Lightbulb size={28} className="text-pink-300" />,
       skills: [
         { name: "Cross-Cultural Competence", level: 90 },
         { name: "Data Storytelling", level: 85 },
@@ -74,7 +74,7 @@ const SkillsPavilion: React.FC<SkillsPavilionProps> = ({ id, onVisible }) => {
   ];
 
   return (
-    <section id={id} ref={ref} className="py-20 bg-white">
+    <section id={id} ref={ref} className="py-20 min-h-screen">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -83,7 +83,7 @@ const SkillsPavilion: React.FC<SkillsPavilionProps> = ({ id, onVisible }) => {
           className="text-center mb-16"
         >
           <h2 className="section-heading">Skills Pavilion</h2>
-          <p className="text-neutral-600 max-w-2xl mx-auto">
+          <p className="text-white-glass text-xl max-w-3xl mx-auto leading-relaxed">
             A comprehensive overview of my technical and analytical capabilities in data science and business analytics.
           </p>
         </motion.div>
@@ -95,32 +95,30 @@ const SkillsPavilion: React.FC<SkillsPavilionProps> = ({ id, onVisible }) => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="glass-panel"
+              className="glass-panel p-8"
             >
-              <div className="p-6">
-                <div className="flex items-center mb-6">
-                  <div className="mr-3">{category.icon}</div>
-                  <h3 className="text-xl font-medium">{category.name}</h3>
-                </div>
-                
-                <div className="space-y-4">
-                  {category.skills.map((skill, idx) => (
-                    <div key={idx}>
-                      <div className="flex justify-between items-center mb-1">
-                        <span className="text-neutral-700">{skill.name}</span>
-                        <span className="text-xs text-neutral-500">{skill.level}%</span>
-                      </div>
-                      <div className="w-full bg-neutral-200 rounded-full h-2">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}
-                          transition={{ duration: 1, delay: 0.3 + idx * 0.1 }}
-                          className="h-2 rounded-full bg-primary-600"
-                        />
-                      </div>
+              <div className="flex items-center mb-8">
+                <div className="mr-4 p-3 glass-panel rounded-full">{category.icon}</div>
+                <h3 className="text-2xl font-bold text-white-bright">{category.name}</h3>
+              </div>
+              
+              <div className="space-y-6">
+                {category.skills.map((skill, idx) => (
+                  <div key={idx}>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-white-glass font-medium">{skill.name}</span>
+                      <span className="text-white/70 text-sm font-bold">{skill.level}%</span>
                     </div>
-                  ))}
-                </div>
+                    <div className="skill-bar">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}
+                        transition={{ duration: 1.5, delay: 0.3 + idx * 0.1 }}
+                        className="skill-progress"
+                      />
+                    </div>
+                  </div>
+                ))}
               </div>
             </motion.div>
           ))}

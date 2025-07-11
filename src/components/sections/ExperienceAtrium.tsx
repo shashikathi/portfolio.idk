@@ -44,7 +44,7 @@ const ExperienceAtrium: React.FC<ExperienceAtriumProps> = ({ id, onVisible }) =>
   ];
 
   return (
-    <section id={id} ref={ref} className="py-20 bg-white">
+    <section id={id} ref={ref} className="py-20 min-h-screen">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -53,7 +53,7 @@ const ExperienceAtrium: React.FC<ExperienceAtriumProps> = ({ id, onVisible }) =>
           className="text-center mb-16"
         >
           <h2 className="section-heading">Experience Atrium</h2>
-          <p className="text-neutral-600 max-w-2xl mx-auto">
+          <p className="text-white-glass text-xl max-w-3xl mx-auto leading-relaxed">
             Professional experiences that have shaped my expertise in data science and business analytics.
           </p>
         </motion.div>
@@ -65,31 +65,31 @@ const ExperienceAtrium: React.FC<ExperienceAtriumProps> = ({ id, onVisible }) =>
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="glass-panel overflow-hidden"
+              className="experience-card"
             >
               <div className="flex flex-col h-full">
-                <div className="h-40 bg-neutral-100 relative overflow-hidden">
+                <div className="h-48 relative overflow-hidden">
                   <img 
                     src={exp.logo} 
                     alt={`${exp.company} visualization`} 
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                   <div className="absolute bottom-0 left-0 p-6 text-white">
-                    <h3 className="text-xl font-medium">{exp.company}</h3>
-                    <p className="text-white/80">{exp.role}</p>
+                    <h3 className="text-2xl font-bold mb-1">{exp.company}</h3>
+                    <p className="text-white/90 text-lg">{exp.role}</p>
                   </div>
                 </div>
                 
-                <div className="p-6 flex-1 flex flex-col">
-                  <p className="text-sm text-neutral-500 mb-4">{exp.period}</p>
-                  <p className="text-neutral-700 mb-6">{exp.description}</p>
+                <div className="p-8 flex-1 flex flex-col">
+                  <p className="text-white/70 mb-4 font-medium">{exp.period}</p>
+                  <p className="text-white-glass mb-8 leading-relaxed text-lg">{exp.description}</p>
                   
-                  <div className="mt-auto space-y-3">
+                  <div className="mt-auto space-y-4">
                     {exp.metrics.map((metric, idx) => (
-                      <div key={idx} className="flex items-center text-neutral-800">
-                        <span className="mr-2 text-primary-600">{metric.icon}</span>
-                        <span>{metric.text}</span>
+                      <div key={idx} className="flex items-center text-white glass-panel p-4 rounded-lg">
+                        <span className="mr-4 text-blue-300">{metric.icon}</span>
+                        <span className="font-medium">{metric.text}</span>
                       </div>
                     ))}
                   </div>

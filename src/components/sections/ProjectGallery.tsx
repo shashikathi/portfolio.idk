@@ -23,7 +23,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ id, onVisible }) => {
       description: "Built a machine learning model to predict which customers are likely to stop using a telecom service. Used Python, Scikit-Learn, Pandas, and Matplotlib to analyze data and generate insights for improving customer retention.",
       image: "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       tools: ["Python", "Scikit-Learn", "Pandas", "Matplotlib"],
-      icon: <Database className="w-5 h-5" />,
+      icon: <Database className="w-6 h-6" />,
       link: "https://github.com/shashikathi/Customer-Churn-Prediction-"
     },
     {
@@ -31,7 +31,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ id, onVisible }) => {
       description: "Machine learning model achieving 77.1% accuracy in predicting wine quality using Random Forest and Gradient Boosting with hyperparameter tuning. Implemented feature importance analysis and 5-fold cross-validation.",
       image: "https://images.pexels.com/photos/2912108/pexels-photo-2912108.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       tools: ["Python", "Scikit-learn", "Random Forest", "Gradient Boosting"],
-      icon: <Wine className="w-5 h-5" />,
+      icon: <Wine className="w-6 h-6" />,
       link: "https://github.com/shashikathi/Wine-Quality-Prediction"
     },
     {
@@ -39,7 +39,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ id, onVisible }) => {
       description: "Interactive dashboard analyzing historical cryptocurrency prices with advanced visualizations and trend analysis. Features real-time data integration and predictive analytics.",
       image: "https://images.pexels.com/photos/844124/pexels-photo-844124.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       tools: ["Python", "Data Visualization", "Time Series Analysis"],
-      icon: <LineChart className="w-5 h-5" />,
+      icon: <LineChart className="w-6 h-6" />,
       link: "https://github.com/shashikathi/Cryptocurrency_Dashboard"
     },
     {
@@ -47,7 +47,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ id, onVisible }) => {
       description: "Full-stack web application for creating and managing polls with real-time analytics and visualization of voting patterns and user engagement metrics.",
       image: "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       tools: ["Python", "Data Analysis", "Web Development"],
-      icon: <Database className="w-5 h-5" />,
+      icon: <Database className="w-6 h-6" />,
       link: "https://github.com/shashikathi/Poll-based-Web-Application"
     },
     {
@@ -55,13 +55,13 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ id, onVisible }) => {
       description: "Comprehensive analysis of superstore sales data with interactive dashboards, predictive modeling, and business intelligence insights for strategic decision-making.",
       image: "https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       tools: ["Data Analysis", "Business Intelligence", "Visualization"],
-      icon: <BarChart className="w-5 h-5" />,
+      icon: <BarChart className="w-6 h-6" />,
       link: "https://github.com/shashikathi/Superstore_Analytics"
     }
   ];
 
   return (
-    <section id={id} ref={ref} className="py-20 bg-neutral-50">
+    <section id={id} ref={ref} className="py-20 min-h-screen">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -70,7 +70,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ id, onVisible }) => {
           className="text-center mb-16"
         >
           <h2 className="section-heading">Data Analysis Portfolio</h2>
-          <p className="text-neutral-600 max-w-2xl mx-auto">
+          <p className="text-white-glass text-xl max-w-3xl mx-auto leading-relaxed">
             A collection of data analysis projects showcasing expertise in machine learning, visualization, and business intelligence.
           </p>
         </motion.div>
@@ -82,30 +82,31 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ id, onVisible }) => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="glass-panel overflow-hidden group"
+              className="project-card group"
             >
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-64 overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title} 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2 rounded-full">
-                  <span className="text-primary-600">{project.icon}</span>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                <div className="absolute top-6 left-6 glass-panel p-3 rounded-full">
+                  <span className="text-white">{project.icon}</span>
                 </div>
               </div>
               
-              <div className="p-6">
-                <h3 className="text-xl font-medium mb-2 flex items-center">
+              <div className="p-8">
+                <h3 className="text-2xl font-bold mb-4 text-white-bright">
                   {project.title}
                 </h3>
-                <p className="text-neutral-600 mb-4">{project.description}</p>
+                <p className="text-white-glass mb-6 leading-relaxed">{project.description}</p>
                 
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-3 mb-6">
                   {project.tools.map((tool, idx) => (
                     <span 
                       key={idx}
-                      className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 text-primary-800"
+                      className="glass-panel px-4 py-2 rounded-full text-sm font-medium text-white"
                     >
                       {tool}
                     </span>
@@ -116,10 +117,10 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ id, onVisible }) => {
                   href={project.link} 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-primary-600 hover:text-primary-700 transition-colors text-sm font-medium"
+                  className="inline-flex items-center text-white hover:text-blue-300 transition-colors font-semibold text-lg group"
                 >
                   View Project
-                  <ArrowUpRight className="ml-1 w-4 h-4" />
+                  <ArrowUpRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </a>
               </div>
             </motion.div>
