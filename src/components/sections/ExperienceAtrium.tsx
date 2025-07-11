@@ -21,7 +21,7 @@ const ExperienceAtrium: React.FC<ExperienceAtriumProps> = ({ id, onVisible }) =>
     {
       company: "TransOrg Analytics",
       role: "Data Science Intern",
-      period: "Jan 2025 - Present",
+      period: "Jan 2025 - June 2025",
       description: "Developed ML models for customer segmentation and predictive analysis, improving marketing campaign efficiency by 27%. Created interactive Power BI dashboards for real-time performance tracking.",
       metrics: [
         { icon: <LineChart size={20} />, text: "Improved campaign performance by 27%" },

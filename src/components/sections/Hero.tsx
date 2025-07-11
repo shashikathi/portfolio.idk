@@ -57,6 +57,23 @@ const Hero: React.FC<HeroProps> = ({ onSectionChange }) => {
               powerful visualizations, and strategic analysis.
             </p>
             
+            <div className="mb-8 space-y-2">
+              <div className="flex flex-wrap justify-center gap-4 text-sm">
+                <div className="flex items-center bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+                  <span className="text-yellow-600 mr-2">🏆</span>
+                  <span>Gold Medalist in Karate - State Level</span>
+                </div>
+                <div className="flex items-center bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+                  <span className="text-blue-600 mr-2">👨‍💼</span>
+                  <span>Senior Coordinator at Oasis</span>
+                </div>
+                <div className="flex items-center bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+                  <span className="text-green-600 mr-2">💻</span>
+                  <span>9+ ML/DL Projects on GitHub</span>
+                </div>
+              </div>
+            </p>
+            
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
               <button 
                 onClick={handleExploreClick}

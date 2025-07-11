@@ -19,6 +19,14 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ id, onVisible }) => {
 
   const projects = [
     {
+      title: "Customer Churn Prediction",
+      description: "Built a machine learning model to predict which customers are likely to stop using a telecom service. Used Python, Scikit-Learn, Pandas, and Matplotlib to analyze data and generate insights for improving customer retention.",
+      image: "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      tools: ["Python", "Scikit-Learn", "Pandas", "Matplotlib"],
+      icon: <Database className="w-5 h-5" />,
+      link: "https://github.com/shashikathi/Customer-Churn-Prediction-"
+    },
+    {
       title: "Wine Quality Prediction",
       description: "Machine learning model achieving 77.1% accuracy in predicting wine quality using Random Forest and Gradient Boosting with hyperparameter tuning. Implemented feature importance analysis and 5-fold cross-validation.",
       image: "https://images.pexels.com/photos/2912108/pexels-photo-2912108.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
