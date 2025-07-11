@@ -73,30 +73,30 @@ const Hero: React.FC<HeroProps> = ({ onSectionChange }) => {
                 </div>
               </div>
             
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-              <button 
-                onClick={handleExploreClick}
-                className="btn btn-primary px-8 py-3 backdrop-blur-md bg-primary-600/90 hover:bg-primary-600"
-              >
-                Explore Portfolio
-              </button>
-              <a 
-                href="#contact" 
-                className="btn btn-outline px-8 py-3 backdrop-blur-md bg-white/50 hover:bg-white/70"
-              >
-                Get in Touch
-              </a>
-            </div>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+                <button 
+                  onClick={handleExploreClick}
+                  className="btn btn-primary px-8 py-3 backdrop-blur-md bg-primary-600/90 hover:bg-primary-600"
+                >
+                  Explore Portfolio
+                </button>
+                <a 
+                  href="#contact" 
+                  className="btn btn-outline px-8 py-3 backdrop-blur-md bg-white/50 hover:bg-white/70"
+                >
+                  Get in Touch
+                </a>
+              </div>
 
-            <a 
-              href="https://www.instagram.com/____shashikathi____" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center text-neutral-600 hover:text-primary-600 transition-colors"
-            >
-              <Instagram className="w-6 h-6 mr-2" />
-              <span>Follow me on Instagram</span>
-            </a>
+              <a 
+                href="https://www.instagram.com/____shashikathi____" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-neutral-600 hover:text-primary-600 transition-colors"
+              >
+                <Instagram className="w-6 h-6 mr-2" />
+                <span>Follow me on Instagram</span>
+              </a>
             </div>
           </motion.div>
         </motion.div>
@@ -127,5 +127,3 @@ const Hero: React.FC<HeroProps> = ({ onSectionChange }) => {
 };
 
 export default Hero;
-  )
-}
