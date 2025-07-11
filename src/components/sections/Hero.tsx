@@ -97,6 +97,7 @@ const Hero: React.FC<HeroProps> = ({ onSectionChange }) => {
               <Instagram className="w-6 h-6 mr-2" />
               <span>Follow me on Instagram</span>
             </a>
+            </div>
           </motion.div>
         </motion.div>
 
